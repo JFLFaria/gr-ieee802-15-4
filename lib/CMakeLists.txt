@@ -18,6 +18,7 @@
 # Setup library
 #####################################################################
 include(GrPlatform) #define LIB_SUFFIX
+# include(GrMiscUtils) #failed attempt to add d_logger symbol
 
 list(APPEND ieee802_15_4_sources
     access_code_prefixer.cc
@@ -50,6 +51,12 @@ list(APPEND ieee802_15_4_sources
     uc_connection.cc
     zeropadding_b_impl.cc
     zeropadding_removal_b_impl.cc
+    preamble_sink_impl.cc
+    base_packet.cc
+    dna_buffer.cc
+    file_store_impl.cc
+    file_read_impl.cc
+    dna_detector_ccf_impl.cc
 )
 
 set(ieee802_15_4_sources "${ieee802_15_4_sources}" PARENT_SCOPE)

@@ -40,5 +40,6 @@ install(FILES
     rime_stack.h
     zeropadding_b.h
     zeropadding_removal_b.h
-    DESTINATION include/ieee802_15_4
+    preamble_sink.h
+    dna_detector_ccf.h DESTINATION include/ieee802_15_4
 )

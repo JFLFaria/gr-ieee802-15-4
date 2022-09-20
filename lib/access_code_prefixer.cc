@@ -16,70 +16,70 @@
  */
 #include <ieee802_15_4/access_code_prefixer.h>
 
-#include <gnuradio/block_detail.h>
 #include <gnuradio/io_signature.h>
+#include <gnuradio/block_detail.h>
 #include <string.h>
 
 using namespace gr::ieee802_15_4;
 
-class access_code_prefixer_impl : public access_code_prefixer
-{
+class access_code_prefixer_impl : public access_code_prefixer {
 
-public:
-    access_code_prefixer_impl(int pad, int preamble)
-        : block("access_code_prefixer",
-                gr::io_signature::make(0, 0, 0),
-                gr::io_signature::make(0, 0, 0)),
-          d_preamble(preamble)
-    {
+	public:
 
-        message_port_register_out(pmt::mp("out"));
+	access_code_prefixer_impl(int pad, int preamble) :
+			block("access_code_prefixer",
+				gr::io_signature::make(0, 0, 0),
+				gr::io_signature::make(0, 0, 0)),
+			d_preamble(preamble) {
 
-        message_port_register_in(pmt::mp("in"));
-        set_msg_handler(pmt::mp("in"),
-                        boost::bind(&access_code_prefixer_impl::make_frame,
-                                    this,
-                                    boost::placeholders::_1));
-        buf[0] = pad & 0xFF;
+	    message_port_register_out(pmt::mp("out"));
 
-        for (int i = 4; i > 0; i--) {
-            buf[i] = d_preamble & 0xFF;
-            d_preamble >>= 8;
-        }
-    }
+	    message_port_register_in(pmt::mp("in"));
+	    set_msg_handler(pmt::mp("in"), boost::bind(&access_code_prefixer_impl::make_frame, this, boost::placeholders::_1));
+	    buf[0] = pad & 0xFF;
 
-    ~access_code_prefixer_impl() {}
+	    for(int i = 4; i > 0; i--) {
+		buf[i] = d_preamble & 0xFF;
+		d_preamble >>= 8;
+	    }
+	}
 
-    void make_frame(pmt::pmt_t msg)
-    {
+	~access_code_prefixer_impl() {
 
-        if (pmt::is_eof_object(msg)) {
-            message_port_pub(pmt::mp("out"), pmt::PMT_EOF);
-            detail().get()->set_done(true);
-            return;
-        }
+	}
 
-        assert(pmt::is_pair(msg));
-        pmt::pmt_t blob = pmt::cdr(msg);
+	void make_frame (pmt::pmt_t msg) {
 
-        size_t data_len = pmt::blob_length(blob);
-        assert(data_len);
-        assert(data_len < 256 - 5);
+		if(pmt::is_eof_object(msg)) {
+			message_port_pub(pmt::mp("out"), pmt::PMT_EOF);
+			detail().get()->set_done(true);
+			return;
+		}
 
-        buf[5] = data_len;
+		assert(pmt::is_pair(msg));
+		pmt::pmt_t blob = pmt::cdr(msg);
 
-        std::memcpy(buf + 6, pmt::blob_data(blob), data_len);
-        pmt::pmt_t packet = pmt::make_blob(buf, data_len + 6);
+		size_t data_len = pmt::blob_length(blob);
+		assert(data_len);
+		assert(data_len < 256 - 5);
 
-        message_port_pub(pmt::mp("out"), pmt::cons(pmt::PMT_NIL, packet));
-    }
+		buf[5] = data_len;
 
-private:
-    char buf[256];
-    unsigned int d_preamble;
+		std::memcpy(buf + 6, pmt::blob_data(blob), data_len);
+		pmt::pmt_t packet = pmt::make_blob(buf, data_len + 6);
+
+		message_port_pub(pmt::mp("out"), pmt::cons(pmt::PMT_NIL, packet));
+	}
+
+	private:
+		char		buf[256];
+		unsigned int	d_preamble;
+
 };
 
-access_code_prefixer::sptr access_code_prefixer::make(int pad, int preamble)
-{
-    return gnuradio::get_initial_sptr(new access_code_prefixer_impl(pad, preamble));
+access_code_prefixer::sptr
+access_code_prefixer::make(int pad, int preamble) {
+	return gnuradio::get_initial_sptr(new access_code_prefixer_impl(pad,preamble));
 }
+
+
