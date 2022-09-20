@@ -1,0 +1,112 @@
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: teste
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: ieee802_15_4_packet_sink_0
+  id: ieee802_15_4_packet_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    th: '10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [598, 149]
+    rotation: 0
+    state: true
+- name: ieee802_15_4_preamble_sink_0
+  id: ieee802_15_4_preamble_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    buffer: ''
+    burst_trigger: ''
+    comment: ''
+    crc: ''
+    debug: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: ''
+    save_stats_file: ''
+    save_stats_switch: ''
+    threshold: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [664, 312]
+    rotation: 0
+    state: true
+- name: ieee802_15_4_preamble_sink_1
+  id: ieee802_15_4_preamble_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    buffer: ''
+    burst_trigger: ''
+    comment: ''
+    crc: ''
+    debug: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: ''
+    save_stats_file: ''
+    save_stats_switch: ''
+    threshold: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [857, 163]
+    rotation: 0
+    state: true
+connections: []
+
+metadata:
+  file_format: 1

@@ -23,4 +23,6 @@ ieee802_15_4_qpsk_demapper_fi.block.yml
 ieee802_15_4_qpsk_mapper_if.block.yml
 ieee802_15_4_rime_stack.block.yml
 ieee802_15_4_zeropadding_b.block.yml
-ieee802_15_4_zeropadding_removal_b.block.yml DESTINATION share/gnuradio/grc/blocks)
+ieee802_15_4_zeropadding_removal_b.block.yml
+    ieee802_15_4_preamble_sink.block.yml
+    ieee802_15_4_dna_detector_ccf.block.yml DESTINATION share/gnuradio/grc/blocks)

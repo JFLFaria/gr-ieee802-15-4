@@ -47,6 +47,8 @@
 #include "ieee802_15_4/rime_stack.h"
 #include "ieee802_15_4/zeropadding_b.h"
 #include "ieee802_15_4/zeropadding_removal_b.h"
+#include "ieee802_15_4/preamble_sink.h"
+#include "ieee802_15_4/dna_detector_ccf.h"
 %}
 
 %include "ieee802_15_4/access_code_prefixer.h"
@@ -99,3 +101,7 @@ GR_SWIG_BLOCK_MAGIC2(ieee802_15_4, rime_stack);
 GR_SWIG_BLOCK_MAGIC2(ieee802_15_4, zeropadding_b);
 %include "ieee802_15_4/zeropadding_removal_b.h"
 GR_SWIG_BLOCK_MAGIC2(ieee802_15_4, zeropadding_removal_b);
+%include "ieee802_15_4/preamble_sink.h"
+GR_SWIG_BLOCK_MAGIC2(ieee802_15_4, preamble_sink);
+%include "ieee802_15_4/dna_detector_ccf.h"
+GR_SWIG_BLOCK_MAGIC2(ieee802_15_4, dna_detector_ccf);

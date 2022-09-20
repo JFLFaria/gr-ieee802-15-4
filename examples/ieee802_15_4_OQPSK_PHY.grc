@@ -57,7 +57,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [190, 604]
+    coordinate: [192, 660.0]
     rotation: 0
     state: enabled
 - name: blocks_complex_to_float_0
@@ -102,7 +102,7 @@ blocks:
     alias: ''
     comment: ''
     maxoutbuf: '0'
-    minoutbuf: 2**16
+    minoutbuf: '0'
     vlen: '1'
   states:
     bus_sink: false
@@ -180,7 +180,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1116, 213]
+    coordinate: [1216, 220.0]
     rotation: 0
     state: enabled
 - name: blocks_sub_xx_0
@@ -198,7 +198,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [629, 608]
+    coordinate: [632, 664.0]
     rotation: 0
     state: enabled
 - name: blocks_tag_gate_0
@@ -229,7 +229,7 @@ blocks:
     comment: ''
     lengthtagname: packet_len
     maxoutbuf: '0'
-    minoutbuf: 2**16
+    minoutbuf: '0'
     type: complex
     vlen: '1'
   states:
@@ -256,7 +256,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1072, 412]
+    coordinate: [1216, 404.0]
     rotation: 180
     state: enabled
 - name: digital_chunks_to_symbols_xx_0
@@ -303,7 +303,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [852, 205]
+    coordinate: [960, 216.0]
     rotation: 0
     state: enabled
 - name: digital_clock_recovery_mm_xx_0
@@ -324,7 +324,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [770, 589]
+    coordinate: [768, 644.0]
     rotation: 0
     state: enabled
 - name: foo_packet_pad2_0
@@ -377,7 +377,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1006, 621]
+    coordinate: [1008, 676.0]
     rotation: 0
     state: enabled
 - name: import_0
@@ -416,7 +416,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [846, 158]
+    coordinate: [952, 164.0]
     rotation: 0
     state: enabled
 - name: note_2
@@ -429,7 +429,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1074, 358]
+    coordinate: [1216, 348.0]
     rotation: 180
     state: enabled
 - name: note_3
@@ -442,7 +442,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1085, 161]
+    coordinate: [1192, 172.0]
     rotation: 0
     state: enabled
 - name: pad_sink_0
@@ -478,7 +478,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1175, 621]
+    coordinate: [1176, 676.0]
     rotation: 0
     state: enabled
 - name: pad_source_0
@@ -498,7 +498,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [33, 604]
+    coordinate: [32, 660.0]
     rotation: 0
     state: enabled
 - name: pad_source_1
@@ -536,7 +536,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [424, 636]
+    coordinate: [424, 692.0]
     rotation: 0
     state: enabled
 

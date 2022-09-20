@@ -1,0 +1,92 @@
+id: ieee802_15_4_preamble_sink
+label: preamble_sink
+category: '[IEEE802.15.4]'
+
+templates:
+  imports: import ieee802_15_4
+  make: ieee802_15_4.preamble_sink(${samp_rate}, ${threshold}, ${buffeR}, ${burst_trigger}, ${debug}, ${crc}, ${save_switch}, ${save_file})
+
+#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
+#     Keys include:
+#     * id (makes the value accessible as \$keyname, e.g. in the make entry)
+#     * label (label shown in the GUI)
+#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+parameters:
+- id: samp_rate
+  label: Samp rate
+  dtype: float
+  
+- id: threshold
+  label: Chip Error Threshold Max
+  dtype: int
+
+- id: buffeR
+  label: Buffer Length
+  dtype: int
+
+- id: burst_trigger
+  label: Burst Trigger Percentage
+  dtype: float
+
+- id: crc
+  label: CRC
+  dtype: enum
+  options: ['0', '1']
+  option_labels: ["ALL_DATA", "CRC_ONLY"]
+
+- id: save_switch
+  label: Save Stats?
+  dtype: enum
+  options: ['0', '1']
+  option_labels: ["NO", "YES"]
+
+- id: save_file
+  label: Default Stats Name/Location
+  dtype: file_save
+
+- id: debug
+  label: Debug
+  dtype: enum
+  options: ['0', '1', '2', '3', '4', '5', '6', '7']
+  option_labels: ["ALL_OFF", "CHIP_ON", "PACKET_ON", "USRP_ON", "CHIP_PACKET_ON", "CHIP_USRP_ON", "PACKET_USRP_ON", "ALL_ON"]
+
+#  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
+#  Keys include:
+#      * label (an identifier for the GUI)
+#      * domain (optional - stream or message. Default is stream)
+#      * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+#      * vlen (optional - data stream vector length. Default is 1)
+#      * optional (optional - set to 1 for optional inputs. Default is 0)
+inputs:
+- label: in
+#  domain: ...
+  dtype: float
+#  vlen: ...
+#  optional: ...
+- label: in
+#  domain: ...
+  dtype: complex
+#  vlen: ...
+#  optional: ...
+
+outputs:
+- label: out
+#  domain: ...
+  dtype: message
+#  vlen: ...
+#  optional: ...
+- label: preamble_out
+#  domain: ...
+  dtype: complex
+#  vlen: ...
+#  optional: ...
+- label: usrp_passthrough
+#  domain: ...
+  dtype: complex
+#  vlen: ...
+#  optional: ...
+
+
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
+file_format: 1
