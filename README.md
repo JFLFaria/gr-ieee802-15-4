@@ -1,3 +1,9 @@
+## RF-DNA
+
+This repository serves to add the RF-DNA files, developed by [Frankie A. Cruz](https://apps.dtic.mil/sti/citations/AD1074902).
+
+
+# gr-ieee-802-15-4
 Hi!
 
 This is an IEEE802.15.4 O-QPSK transceiver for GNU Radio, based on Thomas
